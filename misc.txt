@@ -1,0 +1,14 @@
+//Add files to local repository
+git add .
+
+//View those files
+git status
+
+//The actual commit
+git commit -m "A message goes here"
+
+//Push the commit to the remote repository
+git remote add origin https://github.com/hotcoffeehero/proshop_mern.git
+
+//Commit files to remote repository
+git push -u origin master
