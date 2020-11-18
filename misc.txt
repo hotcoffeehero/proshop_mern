@@ -12,3 +12,7 @@ git remote add origin https://github.com/hotcoffeehero/proshop_mern.git
 
 //Commit files to remote repository
 git push -u origin master
+
+MongoDB Admin Password
+hotcoffeehero
+clinton1234
