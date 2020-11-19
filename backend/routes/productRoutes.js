@@ -10,6 +10,7 @@ router.get(
     '/', 
     asyncHandler(async (req, res) => {
     const products = await Product.find({})
+    throw new Error('Ya Basic')
     // res.status(401)
     // throw new Error("Yo Bitch Ass Ain't comin' in...")
     res.json(products)
