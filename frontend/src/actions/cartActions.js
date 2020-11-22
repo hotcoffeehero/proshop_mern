@@ -1,7 +1,7 @@
 import axios from 'axios'
-import { CARD_ADD_ITEM, CART_ADD_ITEM } from '../constants/cartConstants'
+import { CARD_ADD_ITEM, CART_REMOVE_ITEM } from '../constants/cartConstants'
 
-export const addToCart = (ix, qty) => async (dispatch, getState) => {
+export const addToCart = (id, qty) => async (dispatch, getState) => {
     const { data } = await axios.get(`/api/products/${id}`)
 
     dispatch({
@@ -10,6 +10,7 @@ export const addToCart = (ix, qty) => async (dispatch, getState) => {
             product: data._id,
             name: data.name,
             image: data.image,
+            price: data.price,
             countInStock: data.countInStock,
             qty
         }

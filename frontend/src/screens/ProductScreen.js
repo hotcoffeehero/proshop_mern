@@ -8,7 +8,7 @@ import Loader from '../components/Loader'
 import { listProductDetails } from '../actions/productActions'
 
 const ProductScreen = ({ history, match }) => {
-    const [qty, setQty] = useState(0) 
+    const [qty, setQty] = useState(1) 
 
     const dispatch = useDispatch()
 
@@ -57,7 +57,7 @@ const ProductScreen = ({ history, match }) => {
                 </ListGroup.Item>
               </ListGroup>
             </Col>
-{/* cart block */}
+            {/* cart block */}
             <Col md={3}>
               <Card>
                 <ListGroup variant="flush">
@@ -78,28 +78,25 @@ const ProductScreen = ({ history, match }) => {
                       </Col>
                     </Row>
                   </ListGroup.Item>
-{/* Button */}
+                  {/* Button */}
 
-                  { product.countInStock > 0 && (
+                  {product.countInStock > 0 && (
                     <ListGroup.Item>
                       <Row>
                         <Col>Qty</Col>
                         <Col>
-                          <Form.Control 
-                            as='select' 
-                              value={qty} 
-                                onChange={
-                                  (e)=>setQty(e.target.value)}
-                                  >
-                            {
-                              [...Array(product.countInStock).keys()]
-                              .map((x) => (
-                                <option key={ x + 1 } value = { x + 1 } >
-                                  { x + 1 }
+                          <Form.Control
+                            as="select"
+                            value={qty}
+                            onChange={(e) => setQty(e.target.value)}
+                          >
+                            {[...Array(product.countInStock).keys()].map(
+                              (x) => (
+                                <option key={x + 1} value={x + 1}>
+                                  {x + 1}
                                 </option>
-                              ))
-                            }
-                            
+                              )
+                            )}
                           </Form.Control>
                         </Col>
                       </Row>

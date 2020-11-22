@@ -18,7 +18,7 @@ const cartItemsFromStorage =
 
 const initialState = {
     cart: { 
-        cartItems: 'Hello'
+        cartItems: cartItemsFromStorage
     }
 }
 
